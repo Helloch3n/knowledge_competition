@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>环保知识专项竞赛</title>
+    <!-- CSS -->
+    <!--    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.6.1/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="../../static/front/bootstrap4.6.1.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            <form style="margin: 70px auto;width: 30%" method="post">
+                {[form.csrf_token()]}
+                <div class="form-group">
+                    <label for="exampleInputEmail1">工号</label>
+                    <input type="text" class="form-control" name="dl_id">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">姓名</label>
+                    <input type="text" class="form-control" name="username">
+                </div>
+                <button type="submit" class="btn btn-primary"
+                        style="width: 100%;background-color: #007bff">提交
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

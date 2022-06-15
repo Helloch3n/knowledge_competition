@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>环保知识专项竞赛</title>
+    <link rel="stylesheet" href="../../static/front/bootstrap4.6.1.css">
+</head>
+<body>
+<div id="app">
+    <div class="jumbotron" style="background: white;width: 50%;margin: auto">
+        <h1 class="display-4">{{ score >= 60 ? '恭喜' : '很遗憾' }}你获得{{ score }}分！</h1>
+        <p class="lead">安全环境管理部X智能制造部</p>
+        <hr class="my-4">
+        <p v-show="award && raffle">本次答题抽到了{{integral}}安全积分</p>
+        <p v-show="!award && raffle">谢谢参与</p>
+        <p v-show="!raffle">抽奖时间为6月5日8:30-22:00</p>
+    </div>
+</div>
+<script src="../../static/vue.js"></script>
+<script src="../../static/axios/axios.min.js"></script>
+<script src="../../static/front/score.js"></script>
+</body>
+</html>

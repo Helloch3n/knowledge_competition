@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>环保知识专项竞赛</title>
+    <!--    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.6.1/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="../../static/front/bootstrap4.6.1.css">
+    <link rel="stylesheet" href="../../static/front/index.css">
+    <!--    <link rel="stylesheet" href="{[ url_for('static',filename='front/index.css')]}">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script type="text/javascript">
+        axios.defaults.headers.common["X-CSRFToken"] = "{[ csrf_token() ]}";
+    </script>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-sm" style="padding-top: 20px" id="app">
+            <div class="shadow p-3 mb-5 bg-white rounded" v-for="question,index in questions"
+                 style="width: 50%;margin: auto">
+                <label>第{{ index + 1 }}题:{{ question.subject }}</label><br>
+                <li :class="{checked:question.answer_1==selected[index]}"
+                    @click="changeSelected(question.answer_1,index)">
+                    A、 {{ question.answer_1 }}
+                </li>
+                <br>
+                <li :class="{checked:question.answer_2==selected[index]}"
+                    @click="changeSelected(question.answer_2,index)">
+                    B、 {{ question.answer_2 }}
+                </li>
+                <br>
+                <li :class="{checked:question.answer_3==selected[index]}"
+                    @click="changeSelected(question.answer_3,index)">
+                    C、 {{ question.answer_3 }}
+                </li>
+                <br>
+                <li :class="{checked:question.answer_4==selected[index]}"
+                    @click="changeSelected(question.answer_4,index)">
+                    D、 {{ question.answer_4 }}
+                </li>
+                <br>
+            </div>
+            <div class="p-3 mb-5 bg-white rounded" style="width: 50%;margin: auto">
+                <button type="submit" class="btn btn-primary" style="width: 100%;background-color: #007bff"
+                        @click.prevent="submitAnswers">
+                    提交答案
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../../static/vue.js"></script>
+<script src="../../static/axios/axios.min.js"></script>
+<script src="../../static/front/index.js"></script>
+</body>
+</html>
